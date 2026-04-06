@@ -1,17 +1,20 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Script from "next/script";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { CartProvider } from "@/lib/cart-context";
 import TemplateScripts from "@/components/TemplateScripts";
+import WhatsAppChatButton from "@/components/WhatsAppChatButton";
+
+/* eslint-disable @next/next/no-css-tags */
 
 export const metadata: Metadata = {
-  title: "Wellnez Spa – Beauty & Wellness in Accra",
+  title: "Smartsale Spa - Beauty & Wellness in Accra",
   description:
-    "Wellnez Spa offers luxury massages, facials, body treatments and wellness products in the heart of Accra, Ghana. Book your appointment today.",
+    "Smartsale Spa offers luxury massages, facials, body treatments and wellness products in the heart of Accra, Ghana. Book your appointment today.",
   keywords:
-    "spa, wellness, massage, facial, body treatment, Accra, Ghana, beauty salon, wellnez",
+    "spa, wellness, massage, facial, body treatment, Accra, Ghana, beauty salon, smartsale",
 };
 
 export default function RootLayout({
@@ -34,6 +37,7 @@ export default function RootLayout({
           <Header />
           <main>{children}</main>
           <Footer />
+          <WhatsAppChatButton />
           <TemplateScripts />
         </CartProvider>
 
@@ -52,8 +56,8 @@ export default function RootLayout({
         <Script src="/assets/js/jquery.magnific-popup.min.js" strategy="afterInteractive" />
         <Script src="/assets/js/imagesloaded.pkgd.min.js" strategy="afterInteractive" />
         <Script src="/assets/js/isotope.pkgd.min.js" strategy="afterInteractive" />
-        <Script src="/assets/js/main.js" strategy="afterInteractive" />
       </body>
     </html>
   );
 }
+

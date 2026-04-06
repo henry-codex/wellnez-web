@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import { useCart } from "@/lib/cart-context";
@@ -9,7 +9,7 @@ export default function Header() {
 
   return (
     <>
-      {/* Mobile menu – vs-menu-wrapper (exact from template) */}
+      {/* Mobile menu - vs-menu-wrapper (exact from template) */}
       <div className="vs-menu-wrapper">
         <div className="vs-menu-area text-center">
           <button className="vs-menu-toggle">
@@ -17,7 +17,7 @@ export default function Header() {
           </button>
           <div className="mobile-logo">
             <Link href="/"             style={{ fontFamily: "serif", fontSize: "22px", fontWeight: 700, color: "var(--theme-color, #9a563a)", textDecoration: "none", letterSpacing: "1px" }}>
-              Wellnez
+              Smartsale
             </Link>
           </div>
           <div className="vs-mobile-menu">
@@ -46,7 +46,7 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Header – header-layout3 (exact from template) */}
+      {/* Header - header-layout3 (exact from template) */}
       <header className="vs-header header-layout3">
         {/* header-top */}
         <div className="header-top">
@@ -64,7 +64,7 @@ export default function Header() {
                     </li>
                     <li>
                       <i className="far fa-envelope"></i>
-                      <Link href="mailto:hello@wellnez.com">hello@wellnez.com</Link>
+                      <Link href="mailto:hello@smartsale.com">hello@smartsale.com</Link>
                     </li>
                   </ul>
                 </div>
@@ -72,7 +72,15 @@ export default function Header() {
               <div className="col-auto d-none d-md-block">
                 <div className="social-style1">
                   <a href="#"><i className="fab fa-facebook-f"></i></a>
-                  <a href="#"><i className="fab fa-twitter"></i></a>
+                  <a
+                    href="https://x.com"
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label="X"
+                    title="X"
+                  >
+                    <span className="x-social-mark">X</span>
+                  </a>
                   <a href="#"><i className="fab fa-instagram"></i></a>
                   <a href="#"><i className="fab fa-google"></i></a>
                   <a href="#"><i className="fab fa-linkedin-in"></i></a>
@@ -90,7 +98,7 @@ export default function Header() {
                 <div className="col">
                   <div className="header-logo">
                     <Link href="/"             style={{ fontFamily: "serif", fontSize: "26px", fontWeight: 700, color: "var(--theme-color, #9a563a)", textDecoration: "none", letterSpacing: "1px" }}>
-                      Wellnez
+                      Smartsale
                     </Link>
                   </div>
                 </div>
@@ -146,7 +154,11 @@ export default function Header() {
                     <Link href="/appointment" className="vs-btn style2 d-none d-xl-inline-block">
                       Book
                     </Link>
-                    <button className="bar-btn sideMenuToggler d-none d-xl-inline-block">
+                    <button
+                      className="bar-btn sideMenuToggler d-none d-xl-inline-block"
+                      type="button"
+                      aria-label="Open menu"
+                    >
                       <span className="bar"></span>
                       <span className="bar"></span>
                       <span className="bar"></span>
@@ -173,3 +185,4 @@ export default function Header() {
     </>
   );
 }
+

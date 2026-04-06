@@ -1,11 +1,11 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { getServices } from "@/lib/firestore";
 import { formatGHS } from "@/lib/utils";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Pricing – Wellnez Spa",
-  description: "Our transparent spa service pricing in Ghana Cedis (GH₵). No surprises.",
+  title: "Pricing - Smartsale Spa",
+  description: "Our transparent spa service pricing in Ghana Cedis (GHS). No surprises.",
 };
 
 export default async function PricingPage() {
@@ -13,13 +13,13 @@ export default async function PricingPage() {
 
   return (
     <>
-      {/* Breadcrumb – exact from price-plan.html */}
+      {/* Breadcrumb - exact from price-plan.html */}
       <div
         className="breadcumb-wrapper"
         style={{
-          backgroundImage: "linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.45)), url(/assets/imgnew/beautiful-woman-doing-facial-treatment-home.jpg)",
+          backgroundImage: "linear-gradient(rgba(0,0,0,0.28),rgba(0,0,0,0.22)), url(/assets/imgnew/beautiful-woman-doing-facial-treatment-home.jpg)",
           backgroundSize: "cover",
-          backgroundPosition: "center top",
+          backgroundPosition: "center",
         }}
       >
         <div className="container z-index-common">
@@ -37,7 +37,7 @@ export default async function PricingPage() {
         </div>
       </div>
 
-      {/* Price Plan – package-style1 (exact from price-plan.html) */}
+      {/* Price Plan - package-style1 (exact from price-plan.html) */}
       <section
         className="space-top space-extra-bottom"
         style={{
@@ -48,7 +48,7 @@ export default async function PricingPage() {
       >
         <div className="container">
           <div className="title-area text-center wow fadeInUp" data-wow-delay="0.2s">
-            <span className="sec-subtitle">Wellnez Spa Pricing</span>
+            <span className="sec-subtitle">Smartsale Spa Pricing</span>
             <h2 className="sec-title">Our Exclusive Plan</h2>
             <div className="sec-shape">
               {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -83,7 +83,7 @@ export default async function PricingPage() {
                   <div className="package-list">
                     <ul className="list-unstyled">
                       <li>
-                        <span className="text-title">{svc.description.slice(0, 40)}…</span>
+                        <span className="text-title">{svc.description.slice(0, 40)}...</span>
                       </li>
                       <li>Expert Therapist</li>
                       <li>Private Room</li>
@@ -134,3 +134,4 @@ export default async function PricingPage() {
     </>
   );
 }
+

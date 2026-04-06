@@ -1,7 +1,57 @@
+﻿"use client";
+
 import Link from "next/link";
+import BestSellersCarousel from "@/components/BestSellersCarousel";
+
+const homeBestSellers = [
+  {
+    id: "home-safari-max",
+    slug: "safari-max",
+    title: "Safari Max",
+    description: "Nourishing body moisturizer for smooth daily hydration.",
+    imageUrl: "/assets/imgnew/beautiful-african-woman-smiling-resting-relaxing-spa-salon.jpg",
+    price: 120,
+    category: "Beauty",
+  },
+  {
+    id: "home-face-oil",
+    slug: "face-oil",
+    title: "Face Oil",
+    description: "Lightweight facial oil blend for glow and moisture balance.",
+    imageUrl: "/assets/imgnew/close-up-portrait-attractive-young-woman-isolated.jpg",
+    price: 135,
+    category: "Cosmetic",
+  },
+  {
+    id: "home-nail-polish",
+    slug: "nail-polish",
+    title: "Nail Polish",
+    description: "Long-wear salon shade with a glossy finish.",
+    imageUrl: "/assets/imgnew/person-enjoying-scalp-massage-spa.jpg",
+    price: 95,
+    category: "Nails",
+  },
+  {
+    id: "home-hand-cream",
+    slug: "hand-cream",
+    title: "Hand Creams",
+    description: "Shea-rich hand cream to soften and protect dry hands.",
+    imageUrl: "/assets/imgnew/beautiful-african-woman-resting-relaxing-spa-resort-with-closed-eyes.jpg",
+    price: 88,
+    category: "Skincare",
+  },
+  {
+    id: "home-body-scrub",
+    slug: "body-scrub",
+    title: "Body Scrub",
+    description: "Exfoliating scrub with natural grains for silky skin.",
+    imageUrl: "/assets/imgnew/young-woman-relaxing-while-taking-bath.jpg",
+    price: 110,
+    category: "Body Care",
+  },
+];
 
 export default function HomePage() {
-
   return (
     <>
       {/* ==============================
@@ -36,7 +86,7 @@ export default function HomePage() {
           ].map((src, i) => (
             <div key={i}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <div className="hero-img"><img src={src} alt="Wellnez Spa" className="w-100" /></div>
+              <div className="hero-img"><img src={src} alt="Smartsale Spa" className="w-100" /></div>
             </div>
           ))}
         </div>
@@ -63,63 +113,50 @@ export default function HomePage() {
           >
             <div><div className="media-style2"><div className="media-shape"></div><span className="media-label">Spa in Accra</span><p className="media-title">Relaxing Massages</p><div className="media-line"></div></div></div>
             <div><div className="media-style2"><div className="media-shape"></div><span className="media-label">Glow Everyday</span><p className="media-title">Brightening Facials</p><div className="media-line"></div></div></div>
-            <div><div className="media-style2"><div className="media-shape"></div><span className="media-label">Calm Space</span><p className="media-title">Wellnez Spa</p><div className="media-line"></div></div></div>
+            <div><div className="media-style2"><div className="media-shape"></div><span className="media-label">Calm Space</span><p className="media-title">Smartsale Spa</p><div className="media-line"></div></div></div>
             <div><div className="media-style2"><div className="media-shape"></div><span className="media-label">Ghana Lifestyle</span><p className="media-title">Self-care Rituals</p><div className="media-line"></div></div></div>
           </div>
         </div>
       </div>
 
       {/* ==============================
-          Banner / Product Strip
+          Feature Area
       ============================== */}
-      <section className="space-top">
-        <div className="shape-mockup jump-img d-none d-xxl-block" data-top="-1%" data-left="0">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/assets/img/bg/banner-sh-1-1.png" alt="shape" />
-        </div>
-        <div className="shape-mockup jump-reverse-img d-none d-xxl-block" data-top="-2%" data-right="0">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/assets/img/bg/banner-sh-1-2.png" alt="shape" />
-        </div>
+      <section className="space-top space-extra-bottom bg-gradient-1 z-index-common">
         <div className="container">
-          <div className="banner-inner1">
-            <div className="row vs-carousel wow fadeInUp" data-wow-delay="0.2s" data-slide-show="3" data-md-slide-show="2">
-              <div className="col-lg-4">
-                <div className="banner-style1 mega-hover">
-                  <Link href="/products" className="link-overlay"><span className="sr-only">Buy Now</span></Link>
+          <div className="title-area text-center wow fadeInUp" data-wow-delay="0.2s">
+            <span className="sec-subtitle">Smartsale skincare</span>
+            <h2 className="sec-title">Facials &amp; Body Treatments</h2>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <div className="sec-shape"><img src="/assets/img/shape/sec-shape-1.png" alt="shape" /></div>
+          </div>
+          <div className="row vs-carousel wow fadeInUp" data-wow-delay="0.3s" data-slide-show="3" data-md-slide-show="2" data-sm-slide-show="1">
+            {[
+              { icon: "fe-1-1.png", title: "Body Treatments", text: "Deeply relaxing body rituals, exfoliation, and hydration for smooth radiant skin." },
+              { icon: "fe-1-2.png", title: "Clean Ingredients", text: "Thoughtfully selected products designed for comfort, glow, and gentle daily care." },
+              { icon: "fe-1-3.png", title: "Made Sustainably", text: "Responsible spa care with quality formulas that respect your skin and the environment." },
+              { icon: "fe-1-4.png", title: "Skin Treatment", text: "Targeted treatment plans for dullness, dryness, and uneven texture with visible results." },
+            ].map((item, i) => (
+              <div className="col-lg-4 col-xl-4" key={i}>
+                <div className="feature-style2">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <div className="banner-img"><img src="/assets/img/banner/ban-1-1.png" alt="banner" /></div>
-                  <div className="banner-content">
-                    <h3 className="banner-title">Glow Serum <span className="text-theme">NEW</span> Arrival</h3>
-                    <span className="banner-price">GHS 220.00<del>GHS 260.00</del></span>
-                  </div>
+                  <div className="vs-icon style2"><img src={`/assets/img/icon/${item.icon}`} alt={item.title} /></div>
+                  <h3 className="feature-title h4">{item.title}</h3>
+                  <div className="arrow-shape"><i className="arrow"></i><i className="arrow"></i><i className="arrow"></i><i className="arrow"></i></div>
+                  <p className="feature-text">{item.text}</p>
+                  <Link href="/services" className="link-btn style2">read more</Link>
                 </div>
               </div>
-              <div className="col-lg-4">
-                <div className="banner-style1 layout2 mega-hover">
-                  <Link href="/products" className="link-overlay"><span className="sr-only">Buy Now</span></Link>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <div className="banner-img"><img src="/assets/img/banner/ban-1-2.png" alt="banner" /></div>
-                  <div className="banner-content">
-                    <h3 className="banner-title">Shea Body Butter</h3>
-                    <span className="banner-price">GHS 150.00<del>GHS 190.00</del></span>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-4">
-                <div className="banner-style1 layout3 mega-hover">
-                  <Link href="/products" className="link-overlay"><span className="sr-only">Buy Now</span></Link>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <div className="banner-img"><img src="/assets/img/banner/ban-1-3.png" alt="banner" /></div>
-                  <div className="banner-content">
-                    <h3 className="banner-title">Relax Bath Salts</h3>
-                    <span className="banner-price">GHS 95.00<del>GHS 120.00</del></span>
-                  </div>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
+      </section>
+
+      {/* ==============================
+          Product Area
+      ============================== */}
+      <section className="space-top">
+        <BestSellersCarousel products={homeBestSellers} title="Best Sellers" />
       </section>
 
       {/* ==============================
@@ -148,20 +185,20 @@ export default function HomePage() {
                   <div className="text-shape">
                     <svg viewBox="0 0 408 579">
                       <path id="textboxpath" d="M0 204C0 91.3339 91.3339 0 204 0V0C316.666 0 408 91.3339 408 204V316.879V375C408 487.666 316.666 579 204 579V579C91.3339 579 0 487.666 0 375V204Z"></path>
-                      <text><textPath href="#textboxpath" startOffset="810">Onsectttur adipiscung</textPath></text>
+                      <text><textPath href="#textboxpath" startOffset="810">Smartsale Signature Care</textPath></text>
                     </svg>
                   </div>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <div className="img-1"><img src="/assets/imgnew/young-woman-enjoys-beauty-spa-home-siting-bathrobe.jpg" alt="Wellnez Spa" /></div>
+                  <div className="img-1"><img src="/assets/imgnew/young-woman-enjoys-beauty-spa-home-siting-bathrobe.jpg" alt="Smartsale Spa" /></div>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <div className="img-2 jump-img"><img src="/assets/img/shape/leaf-1-7.png" alt="about" /></div>
                 </div>
               </div>
             </div>
             <div className="col-lg-7 col-xxl align-self-center wow fadeInUp" data-wow-delay="0.3s">
-              <span className="sec-subtitle">Experience Wellnez Spa <span className="sec-subtext">25 Years</span></span>
+              <span className="sec-subtitle">Experience Smartsale Spa <span className="sec-subtext">25 Years</span></span>
               <h2 className="sec-title2">DISCOVER A <span className="text-theme">CALM RETREAT</span></h2>
-              <p className="quote-text">At Wellnez Spa in Accra, we believe your skin should look healthy and refreshed no matter your lifestyle.</p>
+              <p className="quote-text">At Smartsale Spa in Accra, we believe your skin should look healthy and refreshed no matter your lifestyle.</p>
               <div className="row gx-25">
                 <div className="col-md-6">
                   <div className="feature-style1">
@@ -216,7 +253,7 @@ export default function HomePage() {
               <div className="col" key={i}>
                 <div className="gallery-style2">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <div className="gallery-img"><img src={src} alt="Wellnez Spa gallery" /></div>
+                  <div className="gallery-img"><img src={src} alt="Smartsale Spa gallery" /></div>
                   <div className="circle-btn style2">
                     <Link href="/products" className="btn-icon"><i className="far fa-arrow-right"></i></Link>
                     <div className="btn-text">
@@ -313,7 +350,7 @@ export default function HomePage() {
                 <div className="text-shape">
                   <svg viewBox="0 0 408 579">
                     <path id="textboxpath2" d="M0 204C0 91.3339 91.3339 0 204 0V0C316.666 0 408 91.3339 408 204V316.879V375C408 487.666 316.666 579 204 579V579C91.3339 579 0 487.666 0 375V204Z"></path>
-                    <text><textPath href="#textboxpath2" startOffset="810">Onsectttur adipiscung</textPath></text>
+                    <text><textPath href="#textboxpath2" startOffset="810">Smartsale Signature Care</textPath></text>
                   </svg>
                 </div>
                 <div className="img-product">
@@ -326,8 +363,8 @@ export default function HomePage() {
             </div>
             <div className="col-md-6 col-lg-6 col-xl-8 col-xxl-auto wow fadeInUp" data-wow-delay="0.3s">
               <div className="title-area text-center text-md-start">
-                <span className="text-white sec-subtitle">Experience Wellnez Spa <span className="sec-subtext bg-theme">25 Years</span></span>
-                <h2 className="text-white sec-title">Perfect Packages</h2>
+                <span className="sec-subtitle">Experience Smartsale Spa <span className="sec-subtext bg-theme">25 Years</span></span>
+                <h2 className="sec-title">Perfect Packages</h2>
               </div>
               <div className="price-inner2">
                 <div className="row vs-carousel" data-slide-show="2" data-lg-slide-show="1">
@@ -406,7 +443,7 @@ export default function HomePage() {
             <span className="vs-icon"><img src="/assets/img/icon/quote-1-1.png" alt="icon" /></span>
             <div className="vs-carousel" data-slide-show="1" data-fade="true" data-arrows="true" data-ml-arrows="true" data-xl-arrows="true" data-lg-arrows="true" data-prev-arrow="fal fa-long-arrow-left" data-next-arrow="fal fa-long-arrow-right">
               <div>
-                <p className="testi-text">&ldquo;From the moment I walked in, I felt completely calm. The staff are professional, the space is spotless, and my skin has never looked better. Wellnez is my go-to spa in Accra.&rdquo;</p>
+                <p className="testi-text">&ldquo;From the moment I walked in, I felt completely calm. The staff are professional, the space is spotless, and my skin has never looked better. Smartsale is my go-to spa in Accra.&rdquo;</p>
                 <div className="arrow-shape"><i className="arrow"></i><i className="arrow"></i><i className="arrow"></i><i className="arrow"></i></div>
                 <h3 className="testi-name h5">Abena Mensah</h3>
                 <span className="testi-degi">Loyal Client</span>
@@ -424,44 +461,6 @@ export default function HomePage() {
                 <span className="testi-degi">Regular Guest</span>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ==============================
-          Blog Area
-      ============================== */}
-      <section className="space-top space-extra-bottom">
-        <div className="container">
-          <div className="title-area text-center wow fadeInUp" data-wow-delay="0.2s">
-            <span className="sec-subtitle">our blog</span>
-            <h2 className="sec-title">Latest News Posts</h2>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <div className="sec-shape"><img src="/assets/img/shape/sec-shape-1.png" alt="shape" /></div>
-          </div>
-          <div className="row vs-carousel arrow-margin wow fadeInUp" data-wow-delay="0.3s" data-slide-show="3" data-md-slide-show="2" data-arrows="true">
-            {[
-              { img: "blog-1-1.jpg", title: "Appearance or Health By Eating Well And Exercising", author: "John Deo", date: "10 FEBRUARY, 2023" },
-              { img: "blog-1-2.jpg", title: "Body Spa Treatment on a Relaxing Spa Holiday", author: "Vivi Marian", date: "12 December, 2023" },
-              { img: "blog-1-3.jpg", title: "Beautiful Wedding Body Treatment Relaxing Spa Holiday", author: "Jane Baker", date: "05 November, 2023" },
-              { img: "blog-1-4.jpg", title: "Guide to Finding the Best Massage Sites & Odds feel", author: "Mark Polo", date: "31 January, 2023" },
-            ].map((post, i) => (
-              <div className="col-xl-4" key={i}>
-                <div className="vs-blog blog-style1">
-                  <div className="blog-img">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <Link href="/contact"><img src={`/assets/img/blog/${post.img}`} alt="Blog Thumbnail" className="w-100" /></Link>
-                  </div>
-                  <div className="blog-content">
-                    <h3 className="blog-title h5"><Link href="/contact">{post.title}</Link></h3>
-                    <div className="blog-meta">
-                      <Link href="/contact">By {post.author}</Link>
-                      <Link href="/contact">{post.date}</Link>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </section>
@@ -513,3 +512,4 @@ export default function HomePage() {
     </>
   );
 }
+

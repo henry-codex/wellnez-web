@@ -6,7 +6,6 @@ import {
   addDoc,
   query,
   where,
-  orderBy,
   limit,
   serverTimestamp,
 } from "firebase/firestore";
@@ -15,11 +14,11 @@ import type { Company, Product, Service, Appointment, Order } from "@/types";
 
 // ─── Fallback / seed data (shown when Firebase is not yet configured) ──────────
 export const FALLBACK_COMPANY: Company = {
-  name: "SmartSales",
+  name: "Smartsale",
   tagline: "Experience the Art of Relaxation",
   address: "14 Independence Ave, Accra, Ghana",
   phone: "+233 24 000 0000",
-  email: "hello@smartsales.com",
+  email: "hello@smartsale.com",
   logoUrl: "/assets/img/logo.svg",
   mapEmbedUrl:
     "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.773539348635!2d-0.18697098522875!3d5.603716995935!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNcKwMzYnMTMuNCJOIDDCsDExJzEzLjEiVw!5e0!3m2!1sen!2sgh!4v1600000000000!5m2!1sen!2sgh",
@@ -37,8 +36,7 @@ export const FALLBACK_PRODUCTS: Product[] = [
     title: "Luxe Body Oil",
     description:
       "A nourishing blend of natural oils that leaves skin silky smooth and radiant.",
-    imageUrl:
-      "https://images.unsplash.com/photo-1608248597279-f99d160bfcbc?w=600&q=80",
+    imageUrl: "/assets/img/product/p-2-1.png",
     price: 180,
     category: "Body Care",
     featured: true,
@@ -49,8 +47,7 @@ export const FALLBACK_PRODUCTS: Product[] = [
     title: "Glow Face Cream",
     description:
       "A deeply hydrating face cream enriched with shea butter and vitamin C.",
-    imageUrl:
-      "https://images.unsplash.com/photo-1570194065650-d99fb4b38cbc?w=600&q=80",
+    imageUrl: "/assets/img/product/p-2-2.png",
     price: 230,
     category: "Skincare",
     featured: true,
@@ -60,8 +57,7 @@ export const FALLBACK_PRODUCTS: Product[] = [
     slug: "argan-hair-serum",
     title: "Argan Hair Serum",
     description: "Restore shine and strength to your hair with pure argan oil.",
-    imageUrl:
-      "https://images.unsplash.com/photo-1526758097130-bab247274f58?w=600&q=80",
+    imageUrl: "/assets/img/product/p-2-3.png",
     price: 155,
     category: "Hair Care",
     featured: false,
@@ -71,8 +67,7 @@ export const FALLBACK_PRODUCTS: Product[] = [
     slug: "charcoal-face-mask",
     title: "Charcoal Face Mask",
     description: "Deep-cleansing activated charcoal mask for radiant skin.",
-    imageUrl:
-      "https://images.unsplash.com/photo-1596755389378-c31d21fd1273?w=600&q=80",
+    imageUrl: "/assets/img/product/p-2-4.png",
     price: 120,
     category: "Skincare",
     featured: true,
@@ -82,8 +77,7 @@ export const FALLBACK_PRODUCTS: Product[] = [
     slug: "lavender-bath-salts",
     title: "Lavender Bath Salts",
     description: "Himalayan salt and lavender blend for the ultimate bath soak.",
-    imageUrl:
-      "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&q=80",
+    imageUrl: "/assets/img/product/p-2-5.png",
     price: 95,
     category: "Body Care",
     featured: false,
@@ -94,8 +88,7 @@ export const FALLBACK_PRODUCTS: Product[] = [
     title: "Spa Candle Set",
     description:
       "Hand-poured soy wax candles in calming jasmine and sandalwood.",
-    imageUrl:
-      "https://images.unsplash.com/photo-1602028915047-37269d1a73f7?w=600&q=80",
+    imageUrl: "/assets/img/product/p-2-6.png",
     price: 200,
     category: "Aromatherapy",
     featured: false,

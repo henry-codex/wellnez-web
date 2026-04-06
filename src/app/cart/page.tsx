@@ -14,7 +14,7 @@ export default function CartPage() {
       <Breadcrumb
         title="Your Cart"
         links={[{ label: "Home", href: "/" }, { label: "Cart" }]}
-        bgImage="https://images.unsplash.com/photo-1608248597279-f99d160bfcbc?w=1400&q=80"
+        bgImage="/assets/img/img2.png"
       />
 
       <section className="space-top space-bottom">

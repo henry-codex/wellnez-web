@@ -1,10 +1,10 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { getServices } from "@/lib/firestore";
 import { formatGHS } from "@/lib/utils";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Our Services – Wellnez Spa",
+  title: "Our Services - Smartsale Spa",
   description: "Explore our full menu of luxury spa services in Accra, Ghana. Priced in Ghana Cedis.",
 };
 
@@ -13,13 +13,13 @@ export default async function ServicesPage() {
 
   return (
     <>
-      {/* Breadcrumb – exact from service.html */}
+      {/* Breadcrumb - exact from service.html */}
       <div
         className="breadcumb-wrapper"
         style={{
-          backgroundImage: "linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.45)), url(/assets/imgnew/person-enjoying-scalp-massage-spa.jpg)",
+          backgroundImage: "linear-gradient(rgba(0,0,0,0.28),rgba(0,0,0,0.22)), url(/assets/imgnew/person-enjoying-scalp-massage-spa.jpg)",
           backgroundSize: "cover",
-          backgroundPosition: "center top",
+          backgroundPosition: "center",
         }}
       >
         <div className="container z-index-common">
@@ -37,7 +37,7 @@ export default async function ServicesPage() {
         </div>
       </div>
 
-      {/* Service Area – service-style1 (exact from service.html) */}
+      {/* Service Area - service-style1 (exact from service.html) */}
       <section className="space">
         <div className="service-inner1">
           <div className="container-xl">
@@ -56,7 +56,7 @@ export default async function ServicesPage() {
                           {svc.name}
                         </Link>
                       </h3>
-                      <p className="service-text">{svc.description.slice(0, 70)}…</p>
+                      <p className="service-text">{svc.description.slice(0, 70)}...</p>
                     </div>
                   </div>
                 ))}
@@ -82,7 +82,7 @@ export default async function ServicesPage() {
                           {svc.name}
                         </Link>
                       </h3>
-                      <p className="service-text">{svc.description.slice(0, 70)}…</p>
+                      <p className="service-text">{svc.description.slice(0, 70)}...</p>
                     </div>
                   </div>
                 ))}
@@ -92,7 +92,7 @@ export default async function ServicesPage() {
         </div>
       </section>
 
-      {/* Pricing section – package-style1 (same as service.html) */}
+      {/* Pricing section - package-style1 (same as service.html) */}
       <section className="space-top space-extra-bottom" style={{ position: "relative" }}>
         <div
           className="parallax"
@@ -119,7 +119,7 @@ export default async function ServicesPage() {
                 <div className="text-shape">
                   <svg viewBox="0 0 408 579">
                     <path id="textboxpathsvc" d="M0 204C0 91.3339 91.3339 0 204 0V0C316.666 0 408 91.3339 408 204V316.879V375C408 487.666 316.666 579 204 579V579C91.3339 579 0 487.666 0 375V204Z"></path>
-                    <text><textPath href="#textboxpathsvc" startOffset="810">Onsectttur adipiscung</textPath></text>
+                    <text><textPath href="#textboxpathsvc" startOffset="810">Smartsale Signature Care</textPath></text>
                   </svg>
                 </div>
                 <div className="img-product">
@@ -135,8 +135,8 @@ export default async function ServicesPage() {
 
             <div className="col-md-6 col-lg-6 col-xl-8 col-xxl-auto wow fadeInUp" data-wow-delay="0.3s">
               <div className="title-area text-center text-md-start">
-                <span className="text-white sec-subtitle">Experience Wellnez Spa <span className="sec-subtext bg-theme">25 Years</span></span>
-                <h2 className="text-white sec-title">Perfect Packages</h2>
+                <span className="sec-subtitle">Experience Smartsale Spa <span className="sec-subtext bg-theme">25 Years</span></span>
+                <h2 className="sec-title">Perfect Packages</h2>
               </div>
               <div className="price-inner2">
                 <div className="row vs-carousel" data-slide-show="2" data-lg-slide-show="1">
@@ -196,7 +196,7 @@ export default async function ServicesPage() {
             </span>
             <div className="vs-carousel" data-slide-show="1" data-fade="true" data-arrows="true" data-prev-arrow="fal fa-long-arrow-left" data-next-arrow="fal fa-long-arrow-right">
               {[
-                { text: "SmartSales has completely transformed how I manage stress. Their hot stone massage is divine — I leave feeling reborn every single time.", name: "Abena Mensah", role: "Regular Client" },
+                { text: "Smartsale has completely transformed how I manage stress. Their hot stone massage is divine - I leave feeling reborn every single time.", name: "Abena Mensah", role: "Regular Client" },
                 { text: "The deep tissue massage was incredible. Professional staff and they truly listen to what your body needs.", name: "Kofi Asante", role: "Loyal Customer" },
                 { text: "The Radiance Facial completely transformed my skin. Best spa in Accra, hands down.", name: "Ama Owusu", role: "VIP Member" },
               ].map((t, i) => (
@@ -214,3 +214,4 @@ export default async function ServicesPage() {
     </>
   );
 }
+

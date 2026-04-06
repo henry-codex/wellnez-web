@@ -38,9 +38,9 @@ export default function ContactPage() {
       <div
         className="breadcumb-wrapper"
         style={{
-          backgroundImage: "linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.45)), url(/assets/imgnew/young-woman-enjoys-beauty-spa-home-siting-bathrobe.jpg)",
+          backgroundImage: "linear-gradient(rgba(0,0,0,0.28),rgba(0,0,0,0.22)), url(/assets/imgnew/young-woman-enjoys-beauty-spa-home-siting-bathrobe.jpg)",
           backgroundSize: "cover",
-          backgroundPosition: "center top",
+          backgroundPosition: "center",
         }}
       >
         <div className="container z-index-common">
@@ -152,7 +152,7 @@ export default function ContactPage() {
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="SmartSales Location"
+                  title="Smartsale Location"
                 ></iframe>
               </div>
 
@@ -176,7 +176,7 @@ export default function ContactPage() {
                   <div className="tb-col">
                     <span className="th">Email :</span>
                     <span className="td">
-                      <a href="mailto:hello@smartsales.com">hello@smartsales.com</a>
+                      <a href="mailto:hello@smartsale.com">hello@smartsale.com</a>
                     </span>
                   </div>
                 </div>

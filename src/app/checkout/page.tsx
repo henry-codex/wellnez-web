@@ -2,14 +2,12 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import Breadcrumb from "@/components/Breadcrumb";
 import { useCart } from "@/lib/cart-context";
 import { createOrder } from "@/lib/firestore";
 import { formatGHS } from "@/lib/utils";
 
 export default function CheckoutPage() {
-  const router = useRouter();
   const { items, total, clearCart } = useCart();
 
   const [form, setForm] = useState({
@@ -131,7 +129,7 @@ export default function CheckoutPage() {
           { label: "Cart", href: "/cart" },
           { label: "Checkout" },
         ]}
-        bgImage="https://images.unsplash.com/photo-1608248597279-f99d160bfcbc?w=1400&q=80"
+        bgImage="/assets/img/img2.png"
       />
 
       <section className="space-top space-bottom">

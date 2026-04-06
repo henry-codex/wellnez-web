@@ -1,21 +1,29 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About Us – Wellnez Spa",
-  description: "Learn about Wellnez Spa – our story, values and team in Accra, Ghana.",
+  title: "About Us - Smartsale Spa",
+  description: "Learn about Smartsale Spa - our story, values and team in Accra, Ghana.",
 };
 
 export default function AboutPage() {
+  const specialists = [
+    { name: "Akosua Boateng", role: "Founder & CEO", initials: "AB" },
+    { name: "Efua Mensah", role: "Manicure Expert", initials: "EM" },
+    { name: "Ama Frimpong", role: "Beautician", initials: "AF" },
+    { name: "Kwame Asante", role: "Spa Specialist", initials: "KA" },
+    { name: "Nana Yaw Ofori", role: "Massage Expert", initials: "NO" },
+  ];
+
   return (
     <>
-      {/* Breadcrumb – exact breadcumb-wrapper class from about.html */}
+      {/* Breadcrumb - exact breadcumb-wrapper class from about.html */}
       <div
         className="breadcumb-wrapper"
         style={{
-          backgroundImage: "linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.45)), url(/assets/imgnew/beautiful-african-woman-smiling-resting-relaxing-spa-salon.jpg)",
+          backgroundImage: "linear-gradient(rgba(0,0,0,0.28),rgba(0,0,0,0.22)), url(/assets/imgnew/beautiful-african-woman-smiling-resting-relaxing-spa-salon.jpg)",
           backgroundSize: "cover",
-          backgroundPosition: "center top",
+          backgroundPosition: "center",
         }}
       >
         <div className="container z-index-common">
@@ -31,14 +39,14 @@ export default function AboutPage() {
         </div>
       </div>
 
-      {/* About – exact structure from about.html */}
+      {/* About - exact structure from about.html */}
       <section className="space-top space-extra-bottom">
         <div className="container">
           <div className="row justify-content-between gx-0">
             <div className="col-md-10">
               <span className="sec-subtitle">welcome</span>
               <h2 className="h3 pe-xxl-5 me-xxl-5 mb-md-5 pb-xl-3">
-                We think your skin should look and feel refreshed — Nourish
+                We think your skin should look and feel refreshed - Nourish
                 your outer and inner beauty with our natural, essential
                 oil-infused wellness treatments.
               </h2>
@@ -53,7 +61,7 @@ export default function AboutPage() {
                     <svg viewBox="0 0 150 150">
                       <text>
                         <textPath href="#textPath">
-                          discover our top Wellnez treatments
+                          discover our top Smartsale treatments
                         </textPath>
                       </text>
                     </svg>
@@ -63,39 +71,42 @@ export default function AboutPage() {
             </div>
           </div>
 
-          {/* Large about image carousel */}
-          <div
-            className="vs-carousel mb-30 pb-1 wow fadeInUp"
-            data-wow-delay="0.2s"
-            data-fade="true"
-          >
-            {[
-              "https://images.unsplash.com/photo-1591604021695-0c69b7c05981?w=1400&q=80",
-              "https://images.unsplash.com/photo-1560750588-73207b1ef5b8?w=1400&q=80",
-              "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=1400&q=80",
-            ].map((src, i) => (
-              <div key={i}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={src} alt={`about ${i + 1}`} className="w-100" />
+          {/* Clean visual block without photos */}
+          <div className="about-blank-showcase mb-30 pb-1 wow fadeInUp" data-wow-delay="0.2s">
+            <div className="about-blank-showcase-inner">
+              <div className="about-pill-row">
+                <span className="about-pill">Natural Ingredients</span>
+                <span className="about-pill">Luxury Care</span>
+                <span className="about-pill">Personalized Rituals</span>
               </div>
-            ))}
+              <h3 className="about-blank-title">A Better Wellness Experience, Designed for You</h3>
+              <p className="about-blank-text">
+                This area is intentionally image-free, keeping your About page clean while preserving a premium look and feel.
+                You can drop in visuals later whenever you are ready.
+              </p>
+              <div className="about-blank-metrics">
+                <div className="about-metric-card"><strong>25+</strong><span>Years in Accra</span></div>
+                <div className="about-metric-card"><strong>5k+</strong><span>Happy Guests</span></div>
+                <div className="about-metric-card"><strong>40+</strong><span>Signature Treatments</span></div>
+              </div>
+            </div>
           </div>
 
           <p className="fs-22 font-title text-title mb-4 mb-lg-5">
             We think your skin should look and feel refreshed. Nourish your
             inner and outer beauty with our essential oil-infused treatments.
-                Wellnez Spa has been Accra&apos;s premier wellness destination for over
-                25 years — offering luxury spa services that draw on both African
+                Smartsale Spa has been Accra&apos;s premier wellness destination for over
+                25 years - offering luxury spa services that draw on both African
                 botanical traditions and modern wellness science.
           </p>
 
           <div className="row justify-content-between">
             <div className="col-xl-4 mb-3 mb-xl-0">
               <h3 className="text-uppercase font-body mt-n1">
-                DISCOVER <span className="text-theme">Wellnez</span> Services
+                DISCOVER <span className="text-theme">Smartsale</span> Services
               </h3>
               <p>
-                Every treatment at Wellnez Spa is tailored to your unique needs by
+                Every treatment at Smartsale Spa is tailored to your unique needs by
                 our highly trained team of therapists and skincare specialists.
                 We source only the finest natural ingredients, many of which are
                 grown right here in Ghana.
@@ -151,7 +162,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Testimonials – testi-style2 (same as about.html) */}
+      {/* Testimonials - testi-style2 (same as about.html) */}
       <section className="space-top space-extra-bottom" style={{ position: "relative" }}>
         <div
           className="parallax"
@@ -184,7 +195,7 @@ export default function AboutPage() {
               data-next-arrow="fal fa-long-arrow-right"
             >
               {[
-                { text: "SmartSales has completely transformed how I manage stress. Their hot stone massage is divine — I leave feeling reborn every single time.", name: "Abena Mensah", role: "Regular Client" },
+                { text: "Smartsale has completely transformed how I manage stress. Their hot stone massage is divine - I leave feeling reborn every single time.", name: "Abena Mensah", role: "Regular Client" },
                 { text: "The deep tissue massage was incredible. Professional staff, beautiful environment, and they truly listen to what your body needs. Highly recommend!", name: "Kofi Asante", role: "Loyal Customer" },
                 { text: "From the moment you walk in, you feel the luxury. The Radiance Facial completely transformed my skin. Best spa in Accra, hands down.", name: "Ama Owusu", role: "VIP Member" },
               ].map((t, i) => (
@@ -203,12 +214,12 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Team – team-style1 (same as about.html) */}
+      {/* Team - no photos, clean placeholders */}
       <section className="space-top space-extra-bottom">
         <div className="container">
           <div className="title-area text-center wow fadeInUp" data-wow-delay="0.2s">
             <span className="sec-subtitle">our Members</span>
-            <h2 className="sec-title">Expert Beautician</h2>
+            <h2 className="sec-title">Expert Beauticians</h2>
             <div className="sec-shape">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/assets/img/shape/sec-shape-1.png" alt="shape" />
@@ -221,18 +232,11 @@ export default function AboutPage() {
             data-lg-slide-show="3"
             data-md-slide-show="2"
           >
-            {[
-              { img: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=400&q=80", name: "Akosua Boateng", role: "Founder & CEO" },
-              { img: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=400&q=80", name: "Efua Mensah", role: "Manicure Expert" },
-              { img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&q=80", name: "Ama Frimpong", role: "Beautician" },
-              { img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80", name: "Kwame Asante", role: "Spa Specialist" },
-              { img: "https://images.unsplash.com/photo-1552058544-f2b08422138a?w=400&q=80", name: "Nana Yaw Ofori", role: "Massage Expert" },
-            ].map((m, i) => (
+            {specialists.map((m, i) => (
               <div className="col-xl-3" key={i}>
                 <div className="team-style1">
-                  <div className="team-img">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={m.img} alt={m.name} />
+                  <div className="team-placeholder" aria-label={`${m.name} profile placeholder`}>
+                    <span>{m.initials}</span>
                   </div>
                   <h3 className="team-name h4">{m.name}</h3>
                   <p className="team-degi">{m.role}</p>
@@ -245,3 +249,4 @@ export default function AboutPage() {
     </>
   );
 }
+

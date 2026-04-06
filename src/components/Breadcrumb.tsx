@@ -9,31 +9,24 @@ interface BreadcrumbProps {
 export default function Breadcrumb({
   title,
   links,
-  bgImage = "https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=1400&q=80",
+  bgImage = "/assets/img/img2.png",
 }: BreadcrumbProps) {
   return (
     <div
       className="breadcumb-wrapper"
       style={{
-        backgroundImage: `url(${bgImage})`,
+        backgroundImage: `linear-gradient(rgba(0,0,0,0.28),rgba(0,0,0,0.22)), url(${bgImage})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         position: "relative",
         padding: "100px 0 80px",
       }}
     >
-      <div
-        style={{
-          position: "absolute",
-          inset: 0,
-          background: "rgba(0,0,0,0.55)",
-        }}
-      />
       <div className="container" style={{ position: "relative", zIndex: 2 }}>
         <div className="breadcumb-content text-center text-white">
           <h1
             className="breadcumb-title"
-            style={{ fontSize: "clamp(2rem, 5vw, 3.5rem)", fontFamily: "Marcellus, serif" }}
+            style={{ fontSize: "clamp(2rem, 5vw, 3.5rem)", fontFamily: "Marcellus, serif", textShadow: "0 2px 12px rgba(0,0,0,0.55)", color: "#fff" }}
           >
             {title}
           </h1>

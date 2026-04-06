@@ -56,7 +56,7 @@ export default function ProductDetailPage() {
           { label: "Products", href: "/products" },
           { label: product.title },
         ]}
-        bgImage={product.imageUrl}
+        bgImage="/assets/img/img2.png"
       />
 
       {/* ─── Product Detail ─────────────────────────────────── */}

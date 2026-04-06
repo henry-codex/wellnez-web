@@ -36,9 +36,9 @@ export default function AppointmentPage() {
       <div
         className="breadcumb-wrapper"
         style={{
-          backgroundImage: "linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.45)), url(/assets/imgnew/beautiful-african-woman-resting-relaxing-spa-resort-with-closed-eyes.jpg)",
+          backgroundImage: "linear-gradient(rgba(0,0,0,0.28),rgba(0,0,0,0.22)), url(/assets/imgnew/beautiful-african-woman-resting-relaxing-spa-resort-with-closed-eyes.jpg)",
           backgroundSize: "cover",
-          backgroundPosition: "center top",
+          backgroundPosition: "center",
         }}
       >
         <div className="container z-index-common">
@@ -122,13 +122,13 @@ export default function AppointmentPage() {
                     Our expert therapists are here to help you look and feel your very
                     best. From massages to facials to full-body treatments, we offer a
                     comprehensive range of wellness services tailored to your needs.
-                    Book today and experience the SmartSales difference.
+                    Book today and experience the Smartsale difference.
                   </p>
                   <div className="row gy-2">
                     <div className="col-auto">
                       <p className="vs-info">
                         <i className="fal fa-envelope"></i>
-                        <a href="mailto:hello@smartsales.com" className="text-inherit">hello@smartsales.com</a>
+                        <a href="mailto:hello@smartsale.com" className="text-inherit">hello@smartsale.com</a>
                       </p>
                     </div>
                     <div className="col-auto">
@@ -142,17 +142,19 @@ export default function AppointmentPage() {
                 <div className="col-md-7 mb-30">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
-                    src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=700&q=80"
-                    alt="appointment"
+                    src="/assets/imgnew/beautiful-african-woman-resting-relaxing-spa-resort-with-closed-eyes.jpg"
+                    alt="Smartsale appointment consultation"
                     className="w-100"
+                    style={{ borderRadius: "14px", minHeight: "280px", objectFit: "cover" }}
                   />
                 </div>
                 <div className="col-md-5 mb-30">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
-                    src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=400&q=80"
-                    alt="appointment"
+                    src="/assets/imgnew/young-woman-enjoys-beauty-spa-home-siting-bathrobe.jpg"
+                    alt="Smartsale wellness treatment"
                     className="w-100"
+                    style={{ borderRadius: "14px", minHeight: "280px", objectFit: "cover" }}
                   />
                 </div>
               </div>
@@ -161,58 +163,29 @@ export default function AppointmentPage() {
         </div>
       </section>
 
-      {/* Pricing strip (same as appointment.html) */}
+      {/* Simple pricing CTA without experience claim */}
       <section className="space" style={{ position: "relative" }}>
-        <div className="parallax" style={{
-          backgroundImage: "url(/assets/img/bg/price-bg-2-1.jpg)",
-          backgroundSize: "cover", backgroundPosition: "center",
-          position: "absolute", inset: 0, zIndex: 0,
-        }}></div>
+        <div
+          className="parallax"
+          style={{
+            backgroundImage: "linear-gradient(rgba(0,0,0,0.38),rgba(0,0,0,0.38)), url(/assets/img/bg/price-bg-2-1.jpg)",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            position: "absolute",
+            inset: 0,
+            zIndex: 0,
+          }}
+        ></div>
         <div className="container" style={{ position: "relative", zIndex: 1 }}>
-          <div className="row flex-row-reverse gx-55 align-items-center">
-            <div className="col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-              <div className="title-area text-center text-md-start">
-                <span className="text-white sec-subtitle">Experience SmartSales <span className="sec-subtext bg-theme">25 Years</span></span>
+          <div className="row justify-content-center text-center">
+            <div className="col-lg-8 wow fadeInUp" data-wow-delay="0.2s">
+              <div className="title-area mb-0">
+                <span className="text-white sec-subtitle">Smartsale Wellness Packages</span>
                 <h2 className="text-white sec-title">Perfect Package</h2>
               </div>
               <div className="mt-4">
                 <Link href="/pricing" className="vs-btn style3">View All Prices</Link>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials */}
-      <section className="space" style={{ position: "relative" }}>
-        <div className="parallax" style={{
-          backgroundImage: "url(/assets/img/bg/testi-bg-2-1.jpg)",
-          backgroundSize: "cover", backgroundPosition: "center",
-          position: "absolute", inset: 0, zIndex: 0,
-        }}></div>
-        <div className="container" style={{ position: "relative", zIndex: 1 }}>
-          <div className="title-area text-center">
-            <span className="sec-subtitle">client testimonial</span>
-            <h2 className="sec-title">SmartSales Customers</h2>
-          </div>
-          <div className="pb-1px"></div>
-          <div className="testi-style2">
-            <span className="vs-icon">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/assets/img/icon/quote-1-1.png" alt="icon" />
-            </span>
-            <div className="vs-carousel" data-slide-show="1" data-fade="true" data-arrows="true" data-prev-arrow="fal fa-long-arrow-left" data-next-arrow="fal fa-long-arrow-right">
-              {[
-                { text: "Booking was so easy and the service was even better. Highly recommend SmartSales for anyone looking to relax.", name: "Efua Boateng", role: "Customer" },
-                { text: "The hot stone massage was incredible. Professional staff and a beautiful environment.", name: "Kofi Mensah", role: "Regular Client" },
-              ].map((t, i) => (
-                <div key={i}>
-                  <p className="testi-text">&ldquo;{t.text}&rdquo;</p>
-                  <div className="arrow-shape"><i className="arrow"></i><i className="arrow"></i><i className="arrow"></i><i className="arrow"></i></div>
-                  <h3 className="testi-name h5">{t.name}</h3>
-                  <span className="testi-degi">{t.role}</span>
-                </div>
-              ))}
             </div>
           </div>
         </div>

@@ -10,17 +10,22 @@ export default function Footer() {
             <div className="col-md-4 d-none d-lg-flex">
               <div className="social-style2">
                 <a href="#"><i className="fab fa-facebook-f"></i></a>
-                <a href="#"><i className="fab fa-twitter"></i></a>
+                <a
+                  href="https://x.com"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="X"
+                  title="X"
+                >
+                  <span className="x-social-mark">X</span>
+                </a>
                 <a href="#"><i className="fab fa-instagram"></i></a>
                 <a href="#"><i className="fab fa-linkedin-in"></i></a>
               </div>
             </div>
             <div className="col-md-5 col-lg-4">
               <div className="vs-logo">
-                <Link href="/">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src="/assets/img/logo-2.svg" alt="Wellnez" />
-                </Link>
+                <Link href="/" className="footer-brand-text">Smartsale</Link>
               </div>
             </div>
             <div className="col-md-7 col-lg-4">
@@ -42,7 +47,7 @@ export default function Footer() {
           <div className="row justify-content-between">
             <div className="col-md-6 col-xl-auto">
               <div className="widget footer-widget">
-                <h3 className="widget_title">About Wellnez</h3>
+                <h3 className="widget_title">About Smartsale</h3>
                 <p className="footer-info">
                   <i className="fal fa-map-marker-alt text-theme me-2"></i>
                   14 Independence Ave, Accra, Ghana <br />
@@ -50,8 +55,8 @@ export default function Footer() {
                     <i className="far fa-phone-alt text-theme me-2"></i>+233 24 000 0000
                   </a>
                   <br />
-                  <a className="text-inherit" href="mailto:hello@wellnez.com">
-                    <i className="fal fa-envelope text-theme me-2"></i>hello@wellnez.com
+                  <a className="text-inherit" href="mailto:hello@smartsale.com">
+                    <i className="fal fa-envelope text-theme me-2"></i>hello@smartsale.com
                   </a>
                 </p>
                 <h4 className="fs-22 mb-2">Open Hours</h4>
@@ -111,16 +116,11 @@ export default function Footer() {
       {/* copyright-wrap */}
       <div className="copyright-wrap">
         <div className="container">
-          <div className="row justify-content-between align-items-center">
+          <div className="row justify-content-center align-items-center">
             <div className="col-md-auto text-center">
               <p className="copyright-text">
-                Copyright <i className="fal fa-copyright"></i> 2024{" "}
-                <Link href="/">Wellnez Spa</Link>. All Rights Reserved.
+                Copyright <i className="fal fa-copyright"></i> 2026. Designed by <Link href="/">Smartsale</Link>.
               </p>
-            </div>
-            <div className="col-auto d-none d-md-block">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/assets/img/widget/cards.png" alt="payment cards" />
             </div>
           </div>
         </div>
