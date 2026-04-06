@@ -1,26 +1,172 @@
-@import "tailwindcss";
+/* All @imports must be first */
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Marcellus&display=swap");
+@import "tailwindcss/utilities";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/*
+  Project-specific additions ONLY.
+  The template's public/assets/css/style.css already handles:
+  - :root CSS variables, fonts, body, headings, all template components
+  - .vs-btn variants, .sec-title, .sec-subtitle, spacing utilities
+  - All .banner-style1, .service-style1, .package-style1, .hero-layout3
+  Do NOT redefine those here - it causes conflicts.
+*/
+
+/* Feedback boxes */
+.alert-success {
+  background: #d4edda; color: #155724; border: 1px solid #c3e6cb;
+  padding: 1rem 1.5rem; margin-bottom: 1rem; border-radius: 4px;
+}
+.alert-error {
+  background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb;
+  padding: 1rem 1.5rem; margin-bottom: 1rem; border-radius: 4px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Cart qty input */
+.qty-input {
+  width: 70px; text-align: center;
+  border: 1px solid #e0d8cc; padding: 6px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Header cart icon + badge */
+.header-cart-icon {
+  position: relative; display: inline-flex;
+  align-items: center; color: var(--title-color, #121f38);
+  font-size: 18px; text-decoration: none;
+}
+.header-cart-icon:hover { color: var(--theme-color, #9a563a); }
+.cart-badge {
+  position: absolute; top: -8px; right: -10px;
+  background: var(--theme-color, #9a563a); color: #fff;
+  border-radius: 50%; width: 18px; height: 18px;
+  font-size: 11px; display: flex; align-items: center;
+  justify-content: center; font-weight: 700; line-height: 1;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Contact table */
+.contact-table { margin-top: 30px; }
+.contact-table .tr { display: flex; padding: 12px 0; border-bottom: 1px solid #f0ece4; }
+.contact-table .tb-col { display: flex; gap: 12px; flex-wrap: wrap; }
+.contact-table .th { font-weight: 700; color: var(--title-color, #121f38); min-width: 80px; }
+.contact-table .td { color: var(--body-color, #555); }
+.contact-table .td a { color: var(--body-color, #555); text-decoration: none; }
+.contact-table .td a:hover { color: var(--theme-color, #9a563a); }
+
+/* Contact map */
+.contact-map { height: 350px; overflow: hidden; border-radius: 4px; }
+.contact-map iframe { width: 100%; height: 100%; border: 0; }
+
+/* vs-info */
+.vs-info { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+.vs-info a { color: var(--body-color, #555); text-decoration: none; }
+.vs-info a:hover { color: var(--theme-color, #9a563a); }
+.vs-info i { color: var(--theme-color, #9a563a); }
+
+/* Pre-Slick fallbacks so carousels look decent before JS fires */
+.vs-carousel:not(.slick-initialized) {
+  display: flex !important; flex-wrap: wrap; gap: 24px;
+}
+.vs-carousel:not(.slick-initialized) > div,
+.vs-carousel:not(.slick-initialized) > .col,
+.vs-carousel:not(.slick-initialized) > .col-xl-3,
+.vs-carousel:not(.slick-initialized) > .col-xl-4,
+.vs-carousel:not(.slick-initialized) > .col-lg-6 {
+  flex: 1 1 260px; max-width: calc(50% - 12px);
+}
+
+/* Hero: show only first image before Slick runs */
+.hero-layout3 .vs-carousel:not(.slick-initialized) {
+  display: block !important; overflow: hidden;
+}
+.hero-layout3 .vs-carousel:not(.slick-initialized) > div:not(:first-child) {
+  display: none !important;
+}
+.hero-layout3 .vs-carousel:not(.slick-initialized) > div:first-child .hero-img img {
+  width: 100%; max-height: 85vh; object-fit: cover;
+}
+
+/* Media slider pre-slick */
+.media-slider .vs-carousel:not(.slick-initialized) {
+  display: flex !important; flex-wrap: nowrap; overflow: hidden; gap: 0;
+}
+.media-slider .vs-carousel:not(.slick-initialized) > div {
+  flex: 0 0 33.333%; max-width: 33.333%;
+}
+
+/* Gallery: show first slide only */
+.gallery-slider1:not(.slick-initialized) { display: flex !important; overflow: hidden; }
+.gallery-slider1:not(.slick-initialized) > .col:not(:first-child) { display: none !important; }
+
+/* Testimonials: show first only */
+.testi-style2 .vs-carousel:not(.slick-initialized) > div:not(:first-child) { display: none !important; }
+
+/* ── Image fit overrides for real photos (imgnew) ───────────────────────────
+   The template was built for pre-cropped PNGs. These rules lock every image
+   container to a fixed height and use object-fit so real photos look sharp.
+   ─────────────────────────────────────────────────────────────────────────── */
+
+/* Hero images – fixed height so portrait photos display as landscape crops */
+.hero-img {
+  height: 600px;
+  overflow: hidden;
+}
+.hero-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;   /* show face/shoulders, not just forehead */
+  display: block;
+}
+@media (max-width: 992px) {
+  .hero-img { height: 420px; }
+}
+@media (max-width: 576px) {
+  .hero-img { height: 300px; }
+}
+
+/* About section – circular frame, fixed proportions */
+.img-box3 .img-1 {
+  overflow: hidden;
+  border-radius: 9999px;
+  height: 480px;
+  max-width: 380px;
+  margin: 0 auto;
+}
+.img-box3 .img-1 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 15%;
+  display: block;
+}
+
+/* Gallery slider – consistent card height */
+.gallery-style2 .gallery-img {
+  height: 460px !important;
+  overflow: hidden;
+}
+.gallery-style2 .gallery-img img {
+  width: 100%;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center 20%;
+  display: block;
+  transition: transform 0.4s ease;
+}
+.gallery-style2:hover .gallery-img img,
+.slick-current .gallery-style2 .gallery-img img {
+  transform: scale(1.04);
+}
+
+/* Pricing section – featured portrait inside circular bubble */
+.img-box3 .img-product {
+  overflow: hidden;
+}
+.img-box3 .img-product img {
+  width: 200px !important;
+  height: 200px !important;
+  object-fit: cover;
+  object-position: top center;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto 20px;
 }
