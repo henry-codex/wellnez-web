@@ -23,23 +23,8 @@ export default function Header() {
           <div className="vs-mobile-menu">
             <ul>
               <li><Link href="/">Home</Link></li>
-              <li><Link href="/about">About Us</Link></li>
-              <li className="menu-item-has-children">
-                <Link href="/services">Service</Link>
-                <ul className="sub-menu">
-                  <li><Link href="/services">Services</Link></li>
-                  <li><Link href="/pricing">Price Plan</Link></li>
-                </ul>
-              </li>
-              <li className="menu-item-has-children">
-                <Link href="/products">Shop</Link>
-                <ul className="sub-menu">
-                  <li><Link href="/products">Products</Link></li>
-                  <li><Link href="/cart">Cart</Link></li>
-                  <li><Link href="/checkout">Checkout</Link></li>
-                </ul>
-              </li>
-              <li><Link href="/appointment">Appointment</Link></li>
+              <li><Link href="/services">Service</Link></li>
+              <li><Link href="/products">Shop</Link></li>
               <li><Link href="/contact">Contact Us</Link></li>
             </ul>
           </div>
@@ -94,8 +79,8 @@ export default function Header() {
         <div className="sticky-wrap">
           <div className="sticky-active">
             <div className="container">
-              <div className="row justify-content-between align-items-center gx-60">
-                <div className="col">
+              <div className="row align-items-center">
+                <div className="col-lg-3 col-6">
                   <div className="header-logo">
                     <Link href="/"             style={{ fontFamily: "serif", fontSize: "26px", fontWeight: 700, color: "var(--theme-color, #9a563a)", textDecoration: "none", letterSpacing: "1px" }}>
                       Smartsale
@@ -103,34 +88,19 @@ export default function Header() {
                   </div>
                 </div>
 
-                <div className="col-auto">
-                  <nav className="main-menu menu-style1 d-none d-lg-block">
+                <div className="col-lg-6 d-none d-lg-block">
+                  <nav className="main-menu menu-style1 text-center">
                     <ul>
                       <li><Link href="/">Home</Link></li>
-                      <li><Link href="/about">About Us</Link></li>
-                      <li className="menu-item-has-children">
-                        <Link href="/services">Service</Link>
-                        <ul className="sub-menu">
-                          <li><Link href="/services">Services</Link></li>
-                          <li><Link href="/pricing">Price Plan</Link></li>
-                        </ul>
-                      </li>
-                      <li className="menu-item-has-children">
-                        <Link href="/products">Shop</Link>
-                        <ul className="sub-menu">
-                          <li><Link href="/products">All Products</Link></li>
-                          <li><Link href="/cart">Shopping Cart</Link></li>
-                          <li><Link href="/checkout">Checkout</Link></li>
-                        </ul>
-                      </li>
-                      <li><Link href="/appointment">Appointment</Link></li>
+                      <li><Link href="/services">Service</Link></li>
+                      <li><Link href="/products">Shop</Link></li>
                       <li><Link href="/contact">Contact Us</Link></li>
                     </ul>
                   </nav>
                 </div>
 
-                <div className="col-auto">
-                  <div className="header-icons">
+                <div className="col-lg-3 col-6 d-flex justify-content-end">
+                  <div className="header-icons" style={{ flexWrap: "nowrap", gap: "16px" }}>
                     <button className="searchBoxTggler">
                       <i className="far fa-search"></i>
                     </button>
@@ -151,8 +121,8 @@ export default function Header() {
                         </span>
                       )}
                     </Link>
-                    <Link href="/appointment" className="vs-btn style2 d-none d-xl-inline-block">
-                      Book
+                    <Link href="/services" className="vs-btn style2 d-none d-xl-inline-block">
+                      Pick Session
                     </Link>
                     <button
                       className="bar-btn sideMenuToggler d-none d-xl-inline-block"

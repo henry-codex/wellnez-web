@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import BestSellersCarousel from "@/components/BestSellersCarousel";
+import PackageBookingActions from "@/components/PackageBookingActions";
 
 const homeBestSellers = [
   {
@@ -51,6 +52,27 @@ const homeBestSellers = [
   },
 ];
 
+const homePackages = [
+  {
+    id: "pkg-midweek-refresh",
+    slug: "package-midweek-refresh",
+    title: "Midweek Refresh",
+    description: "Quick reset package with massage and express facial.",
+    imageUrl: "/assets/imgnew/person-enjoying-scalp-massage-spa.jpg",
+    price: 350,
+    category: "Service Package",
+  },
+  {
+    id: "pkg-relax-glow",
+    slug: "package-relax-glow",
+    title: "Relax & Glow",
+    description: "Full signature massage and deep facial in one package.",
+    imageUrl: "/assets/imgnew/beautiful-african-woman-resting-relaxing-spa-resort-with-closed-eyes.jpg",
+    price: 650,
+    category: "Service Package",
+  },
+];
+
 export default function HomePage() {
   return (
     <>
@@ -92,7 +114,7 @@ export default function HomePage() {
         </div>
         <div className="media-slider">
           <div className="circle-btn">
-            <Link href="/about" className="btn-icon"><i className="far fa-arrow-right"></i></Link>
+            <Link href="/services" className="btn-icon"><i className="far fa-arrow-right"></i></Link>
             <div className="btn-text">
               <svg viewBox="0 0 150 150">
                 <text><textPath href="#textPath">how to make your glow last all day</textPath></text>
@@ -387,7 +409,9 @@ export default function HomePage() {
                           <li>Perfect for a quick reset</li>
                         </ul>
                       </div>
-                      <div className="package-btn"><Link href="/appointment" className="vs-btn style3">Book Now</Link></div>
+                      <div className="package-btn">
+                        <PackageBookingActions product={homePackages[0]} />
+                      </div>
                     </div>
                   </div>
                   <div className="col-lg-6">
@@ -409,7 +433,9 @@ export default function HomePage() {
                           <li>Ideal for monthly self-care</li>
                         </ul>
                       </div>
-                      <div className="package-btn"><Link href="/appointment" className="vs-btn style3">Book Now</Link></div>
+                      <div className="package-btn">
+                        <PackageBookingActions product={homePackages[1]} />
+                      </div>
                     </div>
                   </div>
                 </div>

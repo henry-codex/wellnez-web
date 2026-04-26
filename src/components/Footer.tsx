@@ -72,8 +72,6 @@ export default function Footer() {
                 <div className="menu-all-pages-container footer-menu">
                   <ul className="menu">
                     <li><Link href="/services">Services</Link></li>
-                    <li><Link href="/about">About Us</Link></li>
-                    <li><Link href="/pricing">Price Plan</Link></li>
                     <li><Link href="/appointment">Appointment</Link></li>
                     <li><Link href="/contact">Contact Us</Link></li>
                   </ul>
@@ -104,7 +102,7 @@ export default function Footer() {
                     <li><Link href="/products">All Products</Link></li>
                     <li><Link href="/cart">Shopping Cart</Link></li>
                     <li><Link href="/checkout">Checkout</Link></li>
-                    <li><Link href="/pricing">Price Plan</Link></li>
+                    <li><Link href="/services">Services</Link></li>
                   </ul>
                 </div>
               </div>

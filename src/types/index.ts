@@ -55,6 +55,7 @@ export interface CartItem {
 
 export interface Order {
   id?: string;
+  paymentMethod?: "pay_on_delivery" | "pay_at_salon" | "mobile_money";
   customer: {
     name: string;
     email: string;

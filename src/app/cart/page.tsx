@@ -9,6 +9,11 @@ import { formatGHS } from "@/lib/utils";
 export default function CartPage() {
   const { items, total, updateQuantity, removeFromCart, clearCart } = useCart();
 
+  function getItemHref(category?: string, slug?: string) {
+    if (category === "Service Package") return "/services";
+    return slug ? `/products/${slug}` : "/products";
+  }
+
   return (
     <>
       <Breadcrumb
@@ -19,6 +24,12 @@ export default function CartPage() {
 
       <section className="space-top space-bottom">
         <div className="container">
+          <div className="booking-journey mb-4">
+            <span className="journey-step active">1. Pick Session / Package</span>
+            <span className="journey-step active">2. Check Details</span>
+            <span className="journey-step">3. Checkout</span>
+          </div>
+
           {items.length === 0 ? (
             <div style={{ textAlign: "center", padding: "60px 0" }}>
               <p
@@ -30,8 +41,8 @@ export default function CartPage() {
               >
                 Your cart is empty.
               </p>
-              <Link href="/products" className="vs-btn">
-                Continue Shopping
+              <Link href="/services" className="vs-btn">
+                Pick Session or Package
               </Link>
             </div>
           ) : (
@@ -78,7 +89,7 @@ export default function CartPage() {
                             </div>
                             <div>
                               <Link
-                                href={`/products/${item.product.slug}`}
+                                href={getItemHref(item.product.category, item.product.slug)}
                                 style={{
                                   fontFamily: "Marcellus, serif",
                                   color: "#1a1a1a",
@@ -185,7 +196,7 @@ export default function CartPage() {
                   }}
                 >
                   <Link href="/products" className="vs-btn style2">
-                    ← Continue Shopping
+                    ← Add More Items
                   </Link>
                   <button
                     onClick={clearCart}

@@ -49,7 +49,7 @@ export default async function ProductsPage() {
                 Everything here is designed to support your everyday wellness routine.
               </p>
               <div className="shop-hero-actions">
-                <Link href="/appointment" className="vs-btn">Book a Treatment</Link>
+                <Link href="/services" className="vs-btn">Pick Session or Package</Link>
                 <Link href="/services" className="vs-btn style3">Explore Services</Link>
               </div>
             </div>
@@ -195,7 +195,7 @@ export default async function ProductsPage() {
           <div className="mt-4">
             <Link href="/services" className="vs-btn">View Services</Link>
             {" "}
-            <Link href="/appointment" className="vs-btn style3">Book Now</Link>
+            <Link href="/services" className="vs-btn style3">Pick Package</Link>
           </div>
         </div>
       </section>

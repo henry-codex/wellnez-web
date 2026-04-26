@@ -1,6 +1,8 @@
 ﻿import Link from "next/link";
 import { getServices } from "@/lib/firestore";
 import { formatGHS } from "@/lib/utils";
+import { serviceToPackageProduct } from "@/lib/package-to-product";
+import PackageBookingActions from "@/components/PackageBookingActions";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -97,7 +99,7 @@ export default async function ServicesPage() {
         <div
           className="parallax"
           style={{
-            backgroundImage: "url(/assets/img/bg/price-bg-2-1.jpg)",
+            backgroundImage: "none",
             backgroundSize: "cover",
             backgroundPosition: "center",
             position: "absolute",
@@ -106,71 +108,71 @@ export default async function ServicesPage() {
           }}
         ></div>
         <div className="container" style={{ position: "relative", zIndex: 1 }}>
-          <div className="row flex-row-reverse gx-55">
-            <div className="col-md-6 col-lg-6 col-xl-4 col-xxl align-self-end mb-40 mb-md-0 wow fadeInUp" data-wow-delay="0.2s">
-              <div className="img-box3 style2">
-                <div className="shape-line">
-                  <svg viewBox="0 0 442 357">
-                    <path className="shape-line" d="M220.6 3C339.98 3 437.1 100.12 437.1 219.5V351.99H440.1V219.5C440.1 160.87 417.27 105.75 375.81 64.29C334.35 22.83 279.23 0 220.6 0C161.97 0 106.85 22.83 65.39 64.29C28.67 101.01 6.57 148.46 2 199.56H5.02C15.12 89.5 107.94 3 220.6 3Z" />
-                    <path className="shape-dot" d="M7 198.5C7 200.433 5.433 202 3.5 202C1.567 202 0 200.433 0 198.5C0 196.567 1.567 195 3.5 195C5.433 195 7 196.567 7 198.5Z" />
-                    <path className="shape-dot" d="M442 353.5C442 355.433 440.433 357 438.5 357C436.567 357 435 355.433 435 353.5C435 351.567 436.567 350 438.5 350C440.433 350 442 351.567 442 353.5Z" />
-                  </svg>
-                </div>
-                <div className="text-shape">
-                  <svg viewBox="0 0 408 579">
-                    <path id="textboxpathsvc" d="M0 204C0 91.3339 91.3339 0 204 0V0C316.666 0 408 91.3339 408 204V316.879V375C408 487.666 316.666 579 204 579V579C91.3339 579 0 487.666 0 375V204Z"></path>
-                    <text><textPath href="#textboxpathsvc" startOffset="810">Smartsale Signature Care</textPath></text>
-                  </svg>
-                </div>
-                <div className="img-product">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src="/assets/img/about/price-2-1-1.png" alt="product" />
-                  <p className="product-title">
-                    <Link href="/products" className="text-inherit">face vitamin</Link>
-                  </p>
-                  <p className="product-price">{formatGHS(services[0]?.price ?? 380)}</p>
-                </div>
-              </div>
-            </div>
+          <div className="title-area text-center wow fadeInUp" data-wow-delay="0.2s">
+            <span className="sec-subtitle">Experience Smartsale Spa <span className="sec-subtext bg-theme">25 Years</span></span>
+            <h2 className="sec-title">Perfect Packages</h2>
+          </div>
 
-            <div className="col-md-6 col-lg-6 col-xl-8 col-xxl-auto wow fadeInUp" data-wow-delay="0.3s">
-              <div className="title-area text-center text-md-start">
-                <span className="sec-subtitle">Experience Smartsale Spa <span className="sec-subtext bg-theme">25 Years</span></span>
-                <h2 className="sec-title">Perfect Packages</h2>
-              </div>
-              <div className="price-inner2">
-                <div className="row vs-carousel" data-slide-show="2" data-lg-slide-show="1">
-                  {services.slice(0, 2).map((svc) => (
-                    <div className="col-lg-6" key={svc.id}>
-                      <div className="package-style1">
-                        <div className="package-top">
-                          <div className="package-left">
-                            <p className="package-price">{svc.price}<span className="currency">GHS</span></p>
-                            <p className="package-duration">{svc.duration}</p>
-                          </div>
-                          <h3 className="package-name">{svc.name}</h3>
-                        </div>
-                        <div className="package-shape">
-                          {/* eslint-disable-next-line @next/next/no-img-element */}
-                          <img src="/assets/img/shape/price-shape-2.png" alt="shape" />
-                        </div>
-                        <div className="package-list">
-                          <ul className="list-unstyled">
-                            <li><span className="text-title">Expert Therapist</span></li>
-                            <li>Natural Ingredients</li>
-                            <li>Private Room</li>
-                            <li>Post-Treatment Advice</li>
-                            <li>Complimentary Tea</li>
-                          </ul>
-                        </div>
-                        <div className="package-btn">
-                          <Link href="/appointment" className="vs-btn style3">Book Now</Link>
-                        </div>
-                      </div>
+          <div className="row g-4 wow fadeInUp" data-wow-delay="0.3s">
+            {services.map((svc) => (
+              <div className="col-md-6 col-xl-4" key={svc.id}>
+                <div className="package-style1 h-100">
+                  <div className="package-top" style={{ display: "block" }}>
+                    <div className="package-left" style={{ marginBottom: "0.75rem" }}>
+                      <p className="package-price">{svc.price}<span className="currency">GHS</span></p>
+                      <p className="package-duration">{svc.duration}</p>
                     </div>
-                  ))}
+                    <h3 className="package-name" style={{ maxWidth: "100%" }}>{svc.name}</h3>
+                  </div>
+                  <div className="package-shape">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src="/assets/img/shape/price-shape-2.png" alt="shape" />
+                  </div>
+                  <div className="package-list">
+                    <ul className="list-unstyled">
+                      <li><span className="text-title">Expert Therapist</span></li>
+                      <li>Natural Ingredients</li>
+                      <li>Private Room</li>
+                      <li>Post-Treatment Advice</li>
+                      <li>Complimentary Tea</li>
+                    </ul>
+                  </div>
+                  <div className="package-btn">
+                    <PackageBookingActions
+                      product={serviceToPackageProduct(svc)}
+                    />
+                  </div>
                 </div>
               </div>
+            ))}
+          </div>
+
+          <div className="mt-5 wow fadeInUp" data-wow-delay="0.35s">
+            <div className="table-responsive">
+              <table className="table table-bordered align-middle text-center bg-white">
+                <thead className="table-dark">
+                  <tr>
+                    <th className="text-start ps-4">Service</th>
+                    <th>Duration</th>
+                    <th>Price</th>
+                    <th>Details</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {services.map((svc) => (
+                    <tr key={`tbl-${svc.id}`}>
+                      <td className="text-start ps-4 fw-semibold">{svc.name}</td>
+                      <td>{svc.duration}</td>
+                      <td className="text-theme fw-bold">{formatGHS(svc.price)}</td>
+                      <td>
+                        <Link href={`/services/${svc.slug}`} className="vs-btn style3">
+                          Check Details
+                        </Link>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
           </div>
         </div>

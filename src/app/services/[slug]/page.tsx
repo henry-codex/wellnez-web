@@ -6,6 +6,8 @@ import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import Breadcrumb from "@/components/Breadcrumb";
 import { getServiceBySlug, getServices } from "@/lib/firestore";
+import { useCart } from "@/lib/cart-context";
+import { serviceToPackageProduct } from "@/lib/package-to-product";
 import { formatGHS } from "@/lib/utils";
 import type { Service } from "@/types";
 
@@ -13,6 +15,8 @@ export default function ServiceDetailPage() {
   const params = useParams<{ slug: string }>();
   const [service, setService] = useState<Service | null>(null);
   const [related, setRelated] = useState<Service[]>([]);
+  const [added, setAdded] = useState(false);
+  const { addToCart } = useCart();
 
   useEffect(() => {
     getServiceBySlug(params.slug).then(setService);
@@ -34,6 +38,12 @@ export default function ServiceDetailPage() {
         <p style={{ color: "#888" }}>Loading…</p>
       </div>
     );
+  }
+
+  function handleAddPackage() {
+    if (!service) return;
+    addToCart(serviceToPackageProduct(service), 1);
+    setAdded(true);
   }
 
   return (
@@ -168,13 +178,21 @@ export default function ServiceDetailPage() {
               </ul>
 
               <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
-                <Link href="/appointment" className="vs-btn">
-                  Book This Service
+                <button type="button" className="vs-btn" onClick={handleAddPackage}>
+                  Add Package to Cart
+                </button>
+                <Link href="/checkout" className="vs-btn style3">
+                  Checkout
                 </Link>
                 <Link href="/services" className="vs-btn style2">
                   All Services
                 </Link>
               </div>
+              {added && (
+                <p style={{ marginTop: "1rem", color: "#2d7a35", fontWeight: 600 }}>
+                  Package added to cart. You can now continue to checkout.
+                </p>
+              )}
             </div>
           </div>
 

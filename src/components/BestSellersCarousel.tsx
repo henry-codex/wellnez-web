@@ -50,7 +50,7 @@ export default function BestSellersCarousel({
                 <Link href={`/products/${product.slug}`}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
-                    src={product.imageUrl}
+                    src={product.imageUrl || "/assets/img/product/p-2-1.png"}
                     alt={product.title}
                     className="w-100"
                     onError={(e) => {

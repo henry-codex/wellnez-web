@@ -184,7 +184,7 @@ export default function AppointmentPage() {
                 <h2 className="text-white sec-title">Perfect Package</h2>
               </div>
               <div className="mt-4">
-                <Link href="/pricing" className="vs-btn style3">View All Prices</Link>
+                <Link href="/services" className="vs-btn style3">View All Services</Link>
               </div>
             </div>
           </div>
